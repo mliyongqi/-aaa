@@ -33,13 +33,13 @@ EOF
 # Common functions
 
 uci_get_by_name() {
-    local ret=$(uci get $NAME.$1.$2 2>/dev/null)
-    echo ${ret:=$3}
+    ret=$(uci get $NAME.$1.$2 2>/dev/null)
+    echo "${ret:=$3}"
 }
 
 uci_get_by_type() {
-    local ret=$(uci get $NAME.@$1[0].$2 2>/dev/null)
-    echo ${ret:=$3}
+    ret=$(uci get $NAME.@$1[0].$2 2>/dev/null)
+    echo "${ret:=$3}"
 }
 
 cancel() {
